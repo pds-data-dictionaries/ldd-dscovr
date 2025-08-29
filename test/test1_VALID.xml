@@ -46,11 +46,10 @@
         <dscovr:EPIC_Parameters>
           <dscovr:Image_Parameters>
             <dscovr:ccd_pixel_size>10</dscovr:ccd_pixel_size>
-          </dscovr:Image_Paremeters>
+          </dscovr:Image_Parameters>
         </dscovr:EPIC_Parameters>
       </dscovr:DSCOVR_Parameters>
-    </Discipline_Area
->
+    </Discipline_Area>
   </Observation_Area>
   <File_Area_Observational>
     <File>
