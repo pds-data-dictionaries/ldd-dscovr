@@ -1,67 +1,65 @@
-<!--
-   README.md template
+# DSCOVR (dscovr:) Mission Dictionary
 
-   In this template, values delimited by braces (e.g., "{value}") should be
-   replaced by the appropriate values for your namespace. The braces
-   should then be removed. Example values are provided as comments for
-   potentially mysterious cases.
--->
-
-# {dictionary name} ({prefix:}) {"Discipline" or "Local"} Dictionary
-<!-- EXAMPLES
-   Spectral (sp:) Discipline Dictionary
-   DART Mission (dart:) Local Dictionary
--->
-
-The {dictionary name} dictionary provides classes and attributes for
-{brief functional description}
+The DSCOVR dictionary provides classes and attributes specific to the
+DSCOVR (Deep Space Climate Observatory) mission.
 
 ### Steward
-{steward name} ({steward GitHub handle}), {steward node}
-<!-- EXAMPLE
-     Anne Raugh (@acraugh), Small Bodies Node (SBN)
--->
+Robert Deen (rgdeen), Image node (IMG)
 
 # Documentation
 
-<!-- The following assumes the complete documentation set exists. If it
-does not, edit the sentence and link accordingly. -->
-The User's Guide and detailed documentation for using this dictionary in
-label design and processing
-are located at https://pds-data-dictionaries.github.io/{repo id}.
-<!-- EXAMPLE
-     are located at https://pds-data-dictionaries.github.io/ldd-template.
--->
+IMPORTANT NOTE:  This mission is a "rescue" mission, where PDS is saving
+    the lunar data and making it available to the public before the mission
+    gets canceled.  As such, we did not have time or resources to throroughly
+    research the metadata.  It is basically copied straight from the documentation
+    we have.  For example, we do not know what the Quaternion is rotating, the
+    sense of the rotation, or even if it's scalar-first or scalar-last.  Hopefully
+    these answers are buried in the documentation somewhere; if not, they must be
+    divined by the user.  Since the primary Earth archive is with ASDC, presumably
+    they will have better information.  It is not great that we have these
+    holes, but better that than lose the data permanently.
+    
+    The following fields in the HDF are not transferred to this LDD, because
+    they were not applicable to the lunar case:
+      Lunar group:
+        centroid_mean_latitude
+        centroid_mean_longitude
+        geolocation_algorithm
+        geospatial_(lat|lon)_(min|max)
+        granule_version
+        image_set_date
+        (max|min)imum_(latitude|longitude)
+        product_level
+        bottom_latitude
+        bottom_longitude
+        centroid_center_height
+        centroid_center_(latitude|longitude)
+        east_longitude
+        left_latitude
+        left_longitude
+        north_latitude
+        south_latitude
+        top_latitude
+        top_longitude
+        west_longitude
+      Image group:
+        centroid_center_(latitude|longitude)
+        centroid_column_offset
+        centroid_row_offset
+        coordsys
+        darkspace
+        percent_bad_pixels
+        all of the pixel_type values (they're in the documentation instead)
+
+
 
 # Latest Release
 
-<!-- Note that the Dictionaries Page link below won't look right on the
-     rendered page until you replace the braces and content with the
-     dictionary prefix.
-
-     EXAMPLE
-
-     [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/#sp)
-
-     The GitHub link will exist once there is an official first release of
-     the dictionary (typically part of a system build) for the namespace. The
-     link is the same for all LDD repos and all builds.
-
-     The change log file is usually in the root directory of the repo, but
-     path information relative to root can be included if needed.
-
-     EXAMPLES
-
-       * Review the [Change Log] (ChangeLog.md)
-       * Review the [Change Log] (src/CHANGELOG.md)
--->     
-* Download dictionary files from the [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/#{dictionary prefix})
+* Download dictionary files from the [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/#dscovr)
 * On [GitHub](../../releases/latest)
-* Review the [Change log]({change log file name})
+* Review the [Change log](src/PDS4_DSCOVR_Ingest_LDD.xml)
 
 # About This Repository
-<!-- The top-level directory structure and names must not change, but if
-you have more to say about any of these directories, edit away! -->
 In this repo you will find...
 * **[src](src)/** - The directory containing the managed *IngestLDD* file
  that defines this namespace. This is where changes to the namespace
@@ -87,12 +85,10 @@ The `gh-pages` branch is auto-generated and used to run the documentation site. 
 # Contributing to this Dictionary
 
 ## Suggest a Feature or Report a Bug
-<!-- replace "repo id" below with the "ldd-xxx" string from the
-GitHub repo URL.-->
 
 There is a common place to request enhancements and report problems for
 any PDS-curated dictionary - the [PDS4 Issue Repo](https://github.com/pds-data-dictionaries/PDS4-LDD-Issue-Repo/issues/new/choose).
-Search for the \[{repo id}\] update request block and click the green
+Search for the \[ldd-dscovr\] update request block and click the green
 "Get Started" button.
 
 ## Contribute Code or documentation
@@ -129,7 +125,7 @@ You will need to install *[LDDTool]* (https://nasa-pds.github.io/pds4-informatio
 you can manually run [LDDTool](https://nasa-pds.github.io/pds4-information-model/model-lddtool/index.html) on the IngestLDD using the following command:
 
 ```
-lddtool -lpsnJ {IngestLDD file name}.xml
+lddtool -lpsnJ PDS4_DSCOVR_IngestLDD.xml
 ```
 
 # Generating Namespace Documentation
