@@ -41,7 +41,7 @@
       <type>Comet</type>
     </Target_Identification>
 
-    <Discipline_Area>
+    <Mission_Area>
       <dscovr:DSCOVR_Parameters>
         <dscovr:EPIC_Parameters>
           <dscovr:Image_Parameters>
@@ -49,7 +49,7 @@
           </dscovr:Image_Parameters>
         </dscovr:EPIC_Parameters>
       </dscovr:DSCOVR_Parameters>
-    </Discipline_Area>
+    </Mission_Area>
   </Observation_Area>
   <File_Area_Observational>
     <File>
