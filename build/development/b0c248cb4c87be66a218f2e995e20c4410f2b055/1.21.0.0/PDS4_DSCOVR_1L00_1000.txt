@@ -1,0 +1,718 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        15.3.0
+   LDD Version Id:        1.0.0.0
+   LDD Label Version Id:  1.27
+   LDD Discipline (T/F):  false
+   LDD Namespace URL:     http://pds.nasa.gov/pds4/
+   LDD URN Prefix:        urn:nasa:pds:
+   Time                   Fri Aug 29 22:45:39 UTC 2025
+   Common Schema          [PDS4_PDS_1L00.xsd]
+   Common Schematron      [PDS4_PDS_1L00.sch]
+   IM Version Id:         1.21.0.0
+   IM Namespace Id:       pds
+   IM Label Version Id:   1.27
+   IM Object Model        [UpperModel.pont]
+   IM Data Dictionary     [dd11179.pins]
+   IM Glossary            [Glossary.pins]
+   IM Document Spec       [DMDocument.pins]
+
+Parameters:
+   Input File             [/home/runner/work/ldd-dscovr/ldd-dscovr/src/PDS4_DSCOVR_IngestLDD.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         false
+   Mission LDD            true
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                8
+   Attributes             47
+   Associations           54
+   Error messages         0
+   Warning messages       0
+   Information messages   0
+
+Detailed validation messages
+
+Parsed Input - Header:
+   LDD Name               DSCOVR Mission Dictionary
+   LDD Version            1.0.0.0
+   Full Name              Robert Deen
+   Steward                img
+   Namespace Id           dscovr
+   Comment                 This dictionary contains classes and attributes specific to the
+    DSCOVR (Deep Space Climate Observatory) mission.
+
+    IMPORTANT NOTE:  This mission is a "rescue" mission, where PDS is saving
+    the lunar data and making it available to the public before the mission
+    gets canceled.  As such, we did not have time or resources to throroughly
+    research the metadata.  It is basically copied straight from the documentation
+    we have.  For example, we do not know what the Quaternion is rotating, the
+    sense of the rotation, or even if it's scalar-first or scalar-last.  Hopefully
+    these answers are buried in the documentation somewhere; if not, they must be
+    divined by the user.  Since the primary Earth archive is with ASDC, presumably
+    they will have better information.  It is not great that we have these
+    holes, but better that than lose the data permanently.
+    
+    The following fields in the HDF are not transferred to this LDD, because
+    they were not applicable to the lunar case:
+      Lunar group:
+        centroid_mean_latitude
+        centroid_mean_longitude
+        geolocation_algorithm
+        geospatial_(lat|lon)_(min|max)
+        granule_version
+        image_set_date
+        (max|min)imum_(latitude|longitude)
+        product_level
+        bottom_latitude
+        bottom_longitude
+        centroid_center_height
+        centroid_center_(latitude|longitude)
+        east_longitude
+        left_latitude
+        left_longitude
+        north_latitude
+        south_latitude
+        top_latitude
+        top_longitude
+        west_longitude
+      Image group:
+        centroid_center_(latitude|longitude)
+        centroid_column_offset
+        centroid_row_offset
+        coordsys
+        darkspace
+        percent_bad_pixels
+        all of the pixel_type values (they're in the documentation instead)
+        
+    ## CHANGE LOG ##
+    1.0.0.0 R. Deen
+    - Initial version
+
+  
+   Last Modification Time 2025-07-09T00:00Z
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   a
+   version                1.21
+   value data type        ASCII_Real
+   description             EPIC optical coefficient "a". See the EPIC documentation. 
+
+   name                   apparent_declination
+   version                1.21
+   value data type        ASCII_Real
+   description             Declination corrected for nutation and precession. See the EPIC documentation. 
+   minimum value          -90.0
+   maximum value          90.0
+   unit of measure type   Units_of_Angle
+
+   name                   apparent_right_ascension
+   version                1.21
+   value data type        ASCII_Real
+   description             Right Ascension corrected for nutation and precession. See the EPIC documentation. 
+   minimum value          0.0
+   maximum value          360.0
+   unit of measure type   Units_of_Angle
+
+   name                   apparent_sidereal_time
+   version                1.21
+   value data type        ASCII_Real
+   description             Apparent sidereal time. See the EPIC documentation. 
+   minimum value          0.0
+   maximum value          360.0
+   unit of measure type   Units_of_Angle
+
+   name                   b
+   version                1.21
+   value data type        ASCII_Real
+   description             EPIC optical coefficient "b". See the EPIC documentation. 
+
+   name                   ccd_pixel_size
+   version                1.21
+   value data type        ASCII_Integer
+   description             CCD pixel size. See the EPIC documentation. 
+
+   name                   ccd_read_mode
+   version                1.21
+   value data type        ASCII_Integer
+   description             Indicates CCD read mode. Default is 51 (Mode 3). See the EPIC documentation. 
+
+   name                   corrected_rotation_x
+   version                1.21
+   value data type        ASCII_Real
+   description             Corrected X rotation solution for transformation from ECR coordinates to spacecraft view. See the EPIC documentation. 
+   unit of measure type   Units_of_Angle
+
+   name                   corrected_rotation_y
+   version                1.21
+   value data type        ASCII_Real
+   description             Corrected Y rotation solution for transformation from ECR coordinates to spacecraft view. See the EPIC documentation. 
+   unit of measure type   Units_of_Angle
+
+   name                   corrected_rotation_z
+   version                1.21
+   value data type        ASCII_Real
+   description             Corrected Z rotation solution for transformation from ECR coordinates to spacecraft view. See the EPIC documentation. 
+   unit of measure type   Units_of_Angle
+
+   name                   declination
+   version                1.21
+   value data type        ASCII_Real
+   description             Declination angle. See the EPIC documentation. 
+   minimum value          -90.0
+   maximum value          90.0
+   unit of measure type   Units_of_Angle
+
+   name                   earth_north_direction
+   version                1.21
+   value data type        ASCII_Real
+   description             Rotation angle required to rotate image so North is oriented to the top of the image. See the EPIC documentation. 
+   minimum value          0.0
+   maximum value          360.0
+   unit of measure type   Units_of_Angle
+
+   name                   ecliptic_obliquity
+   version                1.21
+   value data type        ASCII_Real
+   description             Earth's obliquity in the ecliptic. See the EPIC documentation. 
+   minimum value          0.0
+   maximum value          360.0
+   unit of measure type   Units_of_Angle
+
+   name                   entity
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description             Indicates which entity the enclosing Ephemeris class applies to: Lunar, Solar, or the spacecraft itself (DSCOVR). 
+
+   name                   equatorial_pixel_size
+   version                1.21
+   value data type        ASCII_Real
+   description             Estimated Earth pixel size at equator (measured in pixels). See the EPIC documentation. 
+
+   name                   image_band
+   version                1.21
+   value data type        ASCII_NonNegative_Integer
+   description             Image band number. See the EPIC documentation. 
+
+   name                   k1
+   version                1.21
+   value data type        ASCII_Real
+   description             EPIC optical coefficient "k1". See the EPIC documentation. 
+
+   name                   k2
+   version                1.21
+   value data type        ASCII_Real
+   description             EPIC optical coefficient "k2". See the EPIC documentation. 
+
+   name                   k3
+   version                1.21
+   value data type        ASCII_Real
+   description             EPIC optical coefficient "k3". See the EPIC documentation. 
+
+   name                   nutation_longitude
+   version                1.21
+   value data type        ASCII_Real
+   description             Earth's nutation in longitutde. See the EPIC documentation. 
+   minimum value          0.0
+   maximum value          360.0
+   unit of measure type   Units_of_Angle
+
+   name                   nutation_obliquity
+   version                1.21
+   value data type        ASCII_Real
+   description             Earth's nutation in obliquity. See the EPIC documentation. 
+   minimum value          0.0
+   maximum value          360.0
+   unit of measure type   Units_of_Angle
+
+   name                   p1
+   version                1.21
+   value data type        ASCII_Real
+   description             EPIC optical coefficient "p1". See the EPIC documentation. 
+
+   name                   p2
+   version                1.21
+   value data type        ASCII_Real
+   description             EPIC optical coefficient "p2". See the EPIC documentation. 
+
+   name                   p3
+   version                1.21
+   value data type        ASCII_Real
+   description             EPIC optical coefficient "p3". See the EPIC documentation. 
+
+   name                   p4
+   version                1.21
+   value data type        ASCII_Real
+   description             EPIC optical coefficient "p4". See the EPIC documentation. 
+
+   name                   polar_pixel_size
+   version                1.21
+   value data type        ASCII_Real
+   description             Estimated Earth pixel size at poles (measured in pixels). See the EPIC documentation. 
+
+   name                   precession_ecliptic
+   version                1.21
+   value data type        ASCII_Real
+   description             Precession in the ecliptic angle. See the EPIC documentation. 
+   minimum value          -90.0
+   maximum value          90.0
+   unit of measure type   Units_of_Angle
+
+   name                   precession_equatorial
+   version                1.21
+   value data type        ASCII_Real
+   description             Precession in the equatorial angle. See the EPIC documentation. 
+   minimum value          0.0
+   maximum value          360.0
+   unit of measure type   Units_of_Angle
+
+   name                   q0
+   version                1.21
+   value data type        ASCII_Real
+   description             Quaternion component 0. See the EPIC documentation. 
+
+   name                   q1
+   version                1.21
+   value data type        ASCII_Real
+   description             Quaternion component 1. See the EPIC documentation. 
+
+   name                   q2
+   version                1.21
+   value data type        ASCII_Real
+   description             Quaternion component 2. See the EPIC documentation. 
+
+   name                   q3
+   version                1.21
+   value data type        ASCII_Real
+   description             Quaternion component 3. See the EPIC documentation. 
+
+   name                   revision_number
+   version                1.21
+   value data type        ASCII_Integer
+   description             Revision number of data set. 
+
+   name                   right_ascension
+   version                1.21
+   value data type        ASCII_Real
+   description             Geocentric right ascension angle. See the EPIC documentation. 
+   minimum value          0.0
+   maximum value          360.0
+   unit of measure type   Units_of_Angle
+
+   name                   startracker_rotation_x
+   version                1.21
+   value data type        ASCII_Real
+   description             Original startracker X rotation solution for transformation from ECR coordinates to spacecraft view. See the EPIC documentation. 
+   unit of measure type   Units_of_Angle
+
+   name                   startracker_rotation_y
+   version                1.21
+   value data type        ASCII_Real
+   description             Original startracker Y rotation solution for transformation from ECR coordinates to spacecraft view. See the EPIC documentation. 
+   unit of measure type   Units_of_Angle
+
+   name                   startracker_rotation_z
+   version                1.21
+   value data type        ASCII_Real
+   description             Original startracker Z rotation solution for transformation from ECR coordinates to spacecraft view. See the EPIC documentation. 
+   unit of measure type   Units_of_Angle
+
+   name                   x_pixel_offset
+   version                1.21
+   value data type        ASCII_Integer
+   description             X offset of center of Earth from center of the image. 
+
+   name                   y_pixel_offset
+   version                1.21
+   value data type        ASCII_Integer
+   description             Y offset of center of Earth from center of the image. 
+
+   name                   x_position
+   version                1.21
+   value data type        ASCII_Real
+   description             X position in J2000 coordiantes, in km. 
+   unit of measure type   Units_of_Length
+
+   name                   y_position
+   version                1.21
+   value data type        ASCII_Real
+   description             Y position in J2000 coordiantes, in km. 
+   unit of measure type   Units_of_Length
+
+   name                   z_position
+   version                1.21
+   value data type        ASCII_Real
+   description             Z position in J2000 coordiantes, in km. 
+   unit of measure type   Units_of_Length
+
+   name                   x_velocity
+   version                1.21
+   value data type        ASCII_Real
+   description             X velocity in km/s. 
+   unit of measure type   Units_of_Velocity
+
+   name                   y_velocity
+   version                1.21
+   value data type        ASCII_Real
+   description             Y velocity in km/s. 
+   unit of measure type   Units_of_Velocity
+
+   name                   z_velocity
+   version                1.21
+   value data type        ASCII_Real
+   description             Z velocity in km/s. 
+   unit of measure type   Units_of_Velocity
+
+   name                   xc
+   version                1.21
+   value data type        ASCII_Real
+   description             EPIC optical coefficient "xc". See the EPIC documentation. 
+
+   name                   yc
+   version                1.21
+   value data type        ASCII_Real
+   description             EPIC optical coefficient "yc". See the EPIC documentation. 
+
+Parsed Input - Classes:
+
+   name                   DSCOVR_Parameters
+   description             This is a container class holding all the DSCOVR-specific attributes and classes. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dscovr:EPIC_Parameters
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        component_of
+
+   name                   EPIC_Parameters
+   description             This is a container class holding all the camera-specific parameters for the EPIC (Earth Polychromatic Imaging Camera) on the DSCOVR mission. EPIC data of Earth is archived at the ASDC (Atmospheric Science Data Center). However, ASDC was unable to accept lunar images, so those are being archived in PDS in order to make them publicly available. Because of this history, the metadata descriptions in this class are largely direct transcriptions from the original HDF label, with minimal descriptions (in some cases insufficient for proper interpretation). Please see the DSCOVR-EPIC documentation either in the bundle or at ASDC for better explanations of this metadata. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dscovr:Image_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dscovr:Lunar_Geolocation
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+   name                   Image_Parameters
+   description             This class holds information about the EPIC camera that are not captured in the IMG dictionary. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dscovr:ccd_pixel_size
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:ccd_read_mode
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:revision_number
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:Optical_Coefficient
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+   name                   Optical_Coefficient
+   description             This class holds information about the optical coefficients of the EPIC camera. See the EPIC documentation for details. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dscovr:a
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:b
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:k1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:k2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:k3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:p1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:p2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:p3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:p4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:xc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:yc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Lunar_Geolocation
+   description             This class holds information about the geolocation of EPIC images of the moon. See the EPIC documentation for more information on how to interpret these. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dscovr:apparent_sidereal_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:corrected_rotation_x
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:corrected_rotation_y
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:corrected_rotation_z
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:earth_north_direction
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:ecliptic_obliquity
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:image_band
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:nutation_longitude
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:nutation_obliquity
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:startracker_rotation_x
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:startracker_rotation_y
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:startracker_rotation_z
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:Centroid
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      dscovr:Ephemeris
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+      local identifier      dscovr:Quaternion
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+   name                   Centroid
+   description             This class holds centroid information. See the EPIC documentation. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dscovr:equatorial_pixel_size
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:polar_pixel_size
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:x_pixel_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:y_pixel_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Ephemeris
+   description             This class holds ephemeris information. See the EPIC documentation. Note that there can be multiple instances of this class, where the "entity" attribute defines what the ephemeris information applies to. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dscovr:entity
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:apparent_declination
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:apparent_right_ascension
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:declination
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:right_ascension
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:precession_ecliptic
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:precession_equatorial
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:x_position
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:y_position
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:z_position
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:x_velocity
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:y_velocity
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:z_velocity
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Quaternion
+   description             Specifies attitude from star tracker as a rotation. See the EPIC documentation. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      dscovr:q0
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:q1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:q2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      dscovr:q3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+End of Report
