@@ -1,0 +1,1374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model
+    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1O00.sch"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<!-- PDS4 Local Data Dictionary Extended Ingest File for DSCOVR Mission            -->
+<Ingest_LDD 
+  xmlns="http://pds.nasa.gov/pds4/pds/v1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1O00.xsd">
+  
+  <name>DSCOVR Mission Dictionary</name>
+  <ldd_version_id>1.0.0.0</ldd_version_id>
+  <dictionary_type>Mission</dictionary_type>
+  <full_name>Robert Deen</full_name>
+  <steward_id>img</steward_id>
+  <namespace_id>dscovr</namespace_id>
+  <comment> This dictionary contains classes and attributes specific to the
+    DSCOVR (Deep Space Climate Observatory) mission.
+
+    IMPORTANT NOTE:  This mission is a "rescue" mission, where PDS is saving
+    the lunar data and making it available to the public before the mission
+    gets canceled.  As such, we did not have time or resources to throroughly
+    research the metadata.  It is basically copied straight from the documentation
+    we have.  For example, we do not know what the Quaternion is rotating, the
+    sense of the rotation, or even if it's scalar-first or scalar-last.  Hopefully
+    these answers are buried in the documentation somewhere; if not, they must be
+    divined by the user.  Since the primary Earth archive is with ASDC, presumably
+    they will have better information.  It is not great that we have these
+    holes, but better that than lose the data permanently.
+    
+    The following fields in the HDF are not transferred to this LDD, because
+    they were not applicable to the lunar case:
+      Lunar group:
+        centroid_mean_latitude
+        centroid_mean_longitude
+        geolocation_algorithm
+        geospatial_(lat|lon)_(min|max)
+        granule_version
+        image_set_date
+        (max|min)imum_(latitude|longitude)
+        product_level
+        bottom_latitude
+        bottom_longitude
+        centroid_center_height
+        centroid_center_(latitude|longitude)
+        east_longitude
+        left_latitude
+        left_longitude
+        north_latitude
+        south_latitude
+        top_latitude
+        top_longitude
+        west_longitude
+      Image group:
+        centroid_center_(latitude|longitude)
+        centroid_column_offset
+        centroid_row_offset
+        coordsys
+        darkspace
+        percent_bad_pixels
+        all of the pixel_type values (they're in the documentation instead)
+        
+    ## CHANGE LOG ##
+    1.0.0.0 R. Deen
+    - Initial version
+   
+
+  </comment>
+  <last_modification_date_time>2025-07-09T00:00Z</last_modification_date_time>
+
+  <!--                     -->
+  <!--  Attributes: BEGIN  -->
+  <!--                     -->
+  
+  <DD_Attribute>
+    <name>a</name>
+    <version_id>1.0</version_id>
+    <local_identifier>a</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      EPIC optical coefficient "a".  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>apparent_declination</name>
+    <version_id>1.0</version_id>
+    <local_identifier>apparent_declination</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Declination corrected for nutation and precession.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>-90.0</minimum_value>
+      <maximum_value>90.0</maximum_value>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>apparent_right_ascension</name>
+    <version_id>1.0</version_id>
+    <local_identifier>apparent_right_ascension</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Right Ascension corrected for nutation and precession.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <maximum_value>360.0</maximum_value>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>apparent_sidereal_time</name>
+    <version_id>1.0</version_id>
+    <local_identifier>apparent_sidereal_time</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Apparent sidereal time.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <maximum_value>360.0</maximum_value>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>b</name>
+    <version_id>1.0</version_id>
+    <local_identifier>b</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      EPIC optical coefficient "b".  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>ccd_pixel_size</name>
+    <version_id>1.0</version_id>
+    <local_identifier>ccd_pixel_size</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      CCD pixel size.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>ccd_read_mode</name>
+    <version_id>1.0</version_id>
+    <local_identifier>ccd_read_mode</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Indicates CCD read mode.  Default is 51 (Mode 3).  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>corrected_rotation_x</name>
+    <version_id>1.0</version_id>
+    <local_identifier>corrected_rotation_x</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Corrected X rotation solution for transformation from ECR coordinates to spacecraft view.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>corrected_rotation_y</name>
+    <version_id>1.0</version_id>
+    <local_identifier>corrected_rotation_y</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Corrected Y rotation solution for transformation from ECR coordinates to spacecraft view.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>corrected_rotation_z</name>
+    <version_id>1.0</version_id>
+    <local_identifier>corrected_rotation_z</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Corrected Z rotation solution for transformation from ECR coordinates to spacecraft view.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>declination</name>
+    <version_id>1.0</version_id>
+    <local_identifier>declination</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Declination angle.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>-90.0</minimum_value>
+      <maximum_value>90.0</maximum_value>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>earth_north_direction</name>
+    <version_id>1.0</version_id>
+    <local_identifier>earth_north_direction</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Rotation angle required to rotate image so North is oriented to the top of the image.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <maximum_value>360.0</maximum_value>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>ecliptic_obliquity</name>
+    <version_id>1.0</version_id>
+    <local_identifier>ecliptic_obliquity</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Earth's obliquity in the ecliptic.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <maximum_value>360.0</maximum_value>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>entity</name>
+    <version_id>1.0</version_id>
+    <local_identifier>entity</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Indicates which entity the enclosing Ephemeris class applies to: Lunar,
+      Solar, or the spacecraft itself (DSCOVR).
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>DSCOVR</value>
+        <value_meaning>
+          Indicates that the enclosing Ephemeris class applies to the
+          spacecraft itself.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Solar</value>
+        <value_meaning>
+          Indicates that the enclosing Ephemeris class applies to the sun.
+        </value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Lunar</value>
+        <value_meaning>
+          Indicates that the enclosing Ephemeris class applies to the moon.
+        </value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>equatorial_pixel_size</name>
+    <version_id>1.0</version_id>
+    <local_identifier>equatorial_pixel_size</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Estimated Earth pixel size at equator (measured in pixels).  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>image_band</name>
+    <version_id>1.0</version_id>
+    <local_identifier>image_band</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>B. Deen</submitter_name>
+    <definition>
+      Image band number.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>k1</name>
+    <version_id>1.0</version_id>
+    <local_identifier>k1</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      EPIC optical coefficient "k1".  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>k2</name>
+    <version_id>1.0</version_id>
+    <local_identifier>k2</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      EPIC optical coefficient "k2".  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>k3</name>
+    <version_id>1.0</version_id>
+    <local_identifier>k3</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      EPIC optical coefficient "k3".  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>nutation_longitude</name>
+    <version_id>1.0</version_id>
+    <local_identifier>nutation_longitude</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Earth's nutation in longitutde.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <maximum_value>360.0</maximum_value>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>nutation_obliquity</name>
+    <version_id>1.0</version_id>
+    <local_identifier>nutation_obliquity</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Earth's nutation in obliquity.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <maximum_value>360.0</maximum_value>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>p1</name>
+    <version_id>1.0</version_id>
+    <local_identifier>p1</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      EPIC optical coefficient "p1".  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>p2</name>
+    <version_id>1.0</version_id>
+    <local_identifier>p2</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      EPIC optical coefficient "p2".  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>p3</name>
+    <version_id>1.0</version_id>
+    <local_identifier>p3</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      EPIC optical coefficient "p3".  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>p4</name>
+    <version_id>1.0</version_id>
+    <local_identifier>p4</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      EPIC optical coefficient "p4".  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>polar_pixel_size</name>
+    <version_id>1.0</version_id>
+    <local_identifier>polar_pixel_size</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Estimated Earth pixel size at poles (measured in pixels).  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+ 
+  <DD_Attribute>
+    <name>precession_ecliptic</name>
+    <version_id>1.0</version_id>
+    <local_identifier>precession_ecliptic</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Precession in the ecliptic angle.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>-90.0</minimum_value>
+      <maximum_value>90.0</maximum_value>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>precession_equatorial</name>
+    <version_id>1.0</version_id>
+    <local_identifier>precession_equatorial</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Precession in the equatorial angle.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <maximum_value>360.0</maximum_value>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>q0</name>
+    <version_id>1.0</version_id>
+    <local_identifier>q0</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Quaternion component 0.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>q1</name>
+    <version_id>1.0</version_id>
+    <local_identifier>q1</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Quaternion component 1.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>q2</name>
+    <version_id>1.0</version_id>
+    <local_identifier>q2</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Quaternion component 2.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>q3</name>
+    <version_id>1.0</version_id>
+    <local_identifier>q3</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Quaternion component 3.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>revision_number</name>
+    <version_id>1.0</version_id>
+    <local_identifier>revision_number</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Revision number of data set.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>right_ascension</name>
+    <version_id>1.0</version_id>
+    <local_identifier>right_ascension</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Geocentric right ascension angle.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <minimum_value>0.0</minimum_value>
+      <maximum_value>360.0</maximum_value>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+ 
+  <DD_Attribute>
+    <name>startracker_rotation_x</name>
+    <version_id>1.0</version_id>
+    <local_identifier>startracker_rotation_x</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Original startracker X rotation solution for transformation from ECR coordinates to spacecraft view.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>startracker_rotation_y</name>
+    <version_id>1.0</version_id>
+    <local_identifier>startracker_rotation_y</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Original startracker Y rotation solution for transformation from ECR coordinates to spacecraft view.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>startracker_rotation_z</name>
+    <version_id>1.0</version_id>
+    <local_identifier>startracker_rotation_z</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Original startracker Z rotation solution for transformation from ECR coordinates to spacecraft view.  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+      <specified_unit_id>deg</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>x_pixel_offset</name>
+    <version_id>1.0</version_id>
+    <local_identifier>x_pixel_offset</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      X offset of center of Earth from center of the image.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>y_pixel_offset</name>
+    <version_id>1.0</version_id>
+    <local_identifier>y_pixel_offset</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Y offset of center of Earth from center of the image.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>x_position</name>
+    <version_id>1.0</version_id>
+    <local_identifier>x_position</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      X position in J2000 coordiantes, in km.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+      <specified_unit_id>km</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>y_position</name>
+    <version_id>1.0</version_id>
+    <local_identifier>y_position</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Y position in J2000 coordiantes, in km.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+      <specified_unit_id>km</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>z_position</name>
+    <version_id>1.0</version_id>
+    <local_identifier>z_position</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Z position in J2000 coordiantes, in km.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+      <specified_unit_id>km</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>x_velocity</name>
+    <version_id>1.0</version_id>
+    <local_identifier>x_velocity</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      X velocity in km/s.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Velocity</unit_of_measure_type>
+      <specified_unit_id>km/s</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>y_velocity</name>
+    <version_id>1.0</version_id>
+    <local_identifier>y_velocity</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Y velocity in km/s.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Velocity</unit_of_measure_type>
+      <specified_unit_id>km/s</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>z_velocity</name>
+    <version_id>1.0</version_id>
+    <local_identifier>z_velocity</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Z velocity in km/s.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_Velocity</unit_of_measure_type>
+      <specified_unit_id>km/s</specified_unit_id>
+    </DD_Value_Domain>
+  </DD_Attribute>
+ 
+  <DD_Attribute>
+    <name>xc</name>
+    <version_id>1.0</version_id>
+    <local_identifier>xc</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      EPIC optical coefficient "xc".  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>yc</name>
+    <version_id>1.0</version_id>
+    <local_identifier>yc</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      EPIC optical coefficient "yc".  See the EPIC documentation.
+    </definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Real</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <!--                   -->
+  <!-- Attributes: END   -->
+  <!--                   -->
+
+
+  <!--                   -->
+  <!--  Classes: BEGIN   -->
+  <!--                   -->
+
+  <!-- Class: DSCOVR_Parameters    -->
+  <!-- See schematron rule below for ensuring at least one subclass are present -->
+  
+  <!-- Currently we support only one instrument (EPIC) so there is only one child class here. -->
+  <!-- Therefore the child class is mandatory.  If other children are added later, this could -->
+  <!-- be made optional (with a rule similar to IMG insisting at least one child is present). -->
+  
+  <DD_Class>
+    <name>DSCOVR_Parameters</name>
+    <version_id>1.0</version_id>
+    <local_identifier>DSCOVR_Parameters</local_identifier>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      This is a container class holding all the DSCOVR-specific attributes and classes.
+   </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>true</element_flag>
+    <DD_Association>
+      <identifier_reference>EPIC_Parameters</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  
+  <!-- Class: EPIC_Parameters    -->
+  
+  <DD_Class>
+    <name>EPIC_Parameters</name>
+    <version_id>1.0</version_id>
+    <local_identifier>EPIC_Parameters</local_identifier>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      This is a container class holding all the camera-specific parameters
+      for the EPIC (Earth Polychromatic Imaging Camera) on the DSCOVR mission.
+      EPIC data of Earth is archived at the ASDC (Atmospheric Science Data
+      Center).  However, ASDC was unable to accept lunar images, so those are
+      being archived in PDS in order to make them publicly available.  Because
+      of this history, the metadata descriptions in this class are largely
+      direct transcriptions from the original HDF label, with minimal
+      descriptions (in some cases insufficient for proper interpretation).
+      Please see the DSCOVR-EPIC documentation either in the bundle or at ASDC
+      for better explanations of this metadata.
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>Image_Parameters</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Lunar_Geolocation</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  
+  <!-- Class: Image_Parameters    -->
+  
+  <DD_Class>
+    <name>Image_Parameters</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Image_Parameters</local_identifier>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      This class holds information about the EPIC camera that are not
+      captured in the IMG dictionary.
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>ccd_pixel_size</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>ccd_read_mode</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>revision_number</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Optical_Coefficient</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  
+  <!-- Class: Optical_Coefficient    -->
+  
+  <DD_Class>
+    <name>Optical_Coefficient</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Optical_Coefficient</local_identifier>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      This class holds information about the optical coefficients of the
+      EPIC camera.  See the EPIC documentation for details.
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>a</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>b</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>k1</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>k2</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>k3</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>p1</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>p2</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>p3</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>p4</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>xc</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>yc</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>    
+  </DD_Class>
+
+
+  <!-- Class: Lunar_Geolocation    -->
+  
+  <DD_Class>
+    <name>Lunar_Geolocation</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Lunar_Geolocation</local_identifier>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      This class holds information about the geolocation of EPIC images
+      of the moon.  See the EPIC documentation for more information on
+      how to interpret these.
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>apparent_sidereal_time</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>corrected_rotation_x</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>corrected_rotation_y</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>corrected_rotation_z</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>earth_north_direction</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>ecliptic_obliquity</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>image_band</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>nutation_longitude</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>nutation_obliquity</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>startracker_rotation_x</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>startracker_rotation_y</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>startracker_rotation_z</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Centroid</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Ephemeris</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Quaternion</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  
+  <!-- Class: Centroid    -->
+  
+  <DD_Class>
+    <name>Centroid</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Centroid</local_identifier>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      This class holds centroid information.  See the EPIC documentation.
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>equatorial_pixel_size</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>polar_pixel_size</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>x_pixel_offset</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>y_pixel_offset</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+ 
+  </DD_Class>
+  
+  <!-- Class: Ephemeris    -->
+  
+  <DD_Class>
+    <name>Ephemeris</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Ephemeris</local_identifier>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      This class holds ephemeris information.  See the EPIC documentation.
+      Note that there can be multiple instances of this class, where the
+      "entity" attribute defines what the ephemeris information applies to.
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>entity</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>apparent_declination</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>apparent_right_ascension</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>declination</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>right_ascension</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>precession_ecliptic</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>precession_equatorial</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>x_position</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>y_position</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>z_position</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>x_velocity</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>y_velocity</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>z_velocity</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association> 
+  </DD_Class>
+  
+  <!-- Class: Quaternion    -->
+  
+  <DD_Class>
+    <name>Quaternion</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Quaternion</local_identifier>
+    <submitter_name>R. Deen</submitter_name>
+    <definition>
+      Specifies attitude from star tracker as a rotation.  See the EPIC documentation.
+    </definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>q0</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>q1</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>q2</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association> 
+    <DD_Association>
+      <identifier_reference>q3</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association> 
+  </DD_Class>
+  
+
+  <!--                   -->
+  <!--   Classes: END    -->
+  <!--                   -->
+
+
+  <!-- ======================================================================== -->
+  <!-- BEGIN:  Schematron Rule definitions                                      -->
+  <!-- ======================================================================== -->
+
+  <!-- START - Class child checks -->
+  
+  <!-- none currently -->
+ 
+</Ingest_LDD>
