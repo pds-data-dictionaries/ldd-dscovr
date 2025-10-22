@@ -8,6 +8,18 @@ Robert Deen (rgdeen), Image node (IMG)
 
 # Documentation
 
+DSCOVR (Deep Space Climate Observatory) is a space weather station that monitors
+changes in the solar wind, providing space weather alerts and forecasts for geomagnetic
+storms that could disrupt power grids, satellites, telecommunications, aviation and GPS.
+DSCOVR orbits about a million miles from Earth in a unique location called Lagrange
+point 1, which basically allows it to hover between the Sun and our planet. The
+spacecraft’s EPIC camera takes a new picture of Earth every two hours. The EPIC camera
+also captures images of solar eclipses and images of the Moon as it passes between
+DSCOVR and Earth. The primary DSCOVR data archive is hosted by the NASA Atmospheric
+Science Data Center (ASDC), however Lunar images are not archived in this repository
+due to the lack of cartographic information. The Planetary Data System Cartography
+and Imaging Node, NASA's data archive for planetary imagary, is archiving the Lunar data.
+
 IMPORTANT NOTE:  This mission is a "rescue" mission, where PDS is saving
     the lunar data and making it available to the public before the mission
     gets canceled.  As such, we did not have time or resources to throroughly
