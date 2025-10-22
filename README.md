@@ -55,7 +55,7 @@ IMPORTANT NOTE:  This mission is a "rescue" mission, where PDS is saving
 
 # Latest Release
 
-* Download dictionary files from the [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/#dscovr)
+* Download dictionary files from the [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/index-missions.shtml#dscovr)
 * On [GitHub](../../releases/latest)
 * Review the [Change log](src/PDS4_DSCOVR_Ingest_LDD.xml)
 
