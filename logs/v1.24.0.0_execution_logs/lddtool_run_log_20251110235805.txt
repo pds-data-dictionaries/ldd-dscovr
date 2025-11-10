@@ -1,0 +1,57 @@
+
+>>  INFO LDDTOOL Version: 16.0.0
+>>  INFO IM Version Id: 1.24.0.0
+>>  INFO IM Namespace Id: pds
+>>  INFO IM Label Version Id: 1.0
+>>  INFO Date: Mon Nov 10 23:58:07 UTC 2025
+>>  INFO PARENT_DIR: /tmp/lddtool-16.0.0/Data/
+
+>>> INFO Init:  - Config.Properties Namespace Id Found:dscovr
+>>> INFO Init:  - Config.Properties Namespace Id Using:dscovr
+>>> INFO Init:  - LDD Dictionary_Type is Mission
+>>> INFO Attribute: <apparent_declination> - The default minimum value provided by the attribute's data type is being overridden with -90.0
+>>> INFO Attribute: <apparent_declination> - The default maximum value provided by the attribute's data type is being overridden with 90.0
+>>> INFO Attribute: <apparent_right_ascension> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <apparent_right_ascension> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <apparent_sidereal_time> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <apparent_sidereal_time> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <declination> - The default minimum value provided by the attribute's data type is being overridden with -90.0
+>>> INFO Attribute: <declination> - The default maximum value provided by the attribute's data type is being overridden with 90.0
+>>> INFO Attribute: <earth_north_direction> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <earth_north_direction> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <ecliptic_obliquity> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <ecliptic_obliquity> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <nutation_longitude> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <nutation_longitude> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <nutation_obliquity> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <nutation_obliquity> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <precession_ecliptic> - The default minimum value provided by the attribute's data type is being overridden with -90.0
+>>> INFO Attribute: <precession_ecliptic> - The default maximum value provided by the attribute's data type is being overridden with 90.0
+>>> INFO Attribute: <precession_equatorial> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <precession_equatorial> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+>>> INFO Attribute: <right_ascension> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <right_ascension> - The default maximum value provided by the attribute's data type is being overridden with 360.0
+
+ -- LDDTool Execution Summary --
+     0 warning(s)
+     0 error(s)
+     0 fatal error(s)
+
+Input:
+
+     - IM Version: 1O00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - IM Version: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-dscovr/ldd-dscovr/src/PDS4_DSCOVR_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_DSCOVR_1O00_1000.xsd
+     - ./PDS4_DSCOVR_1O00_1000.sch
+     - ./PDS4_DSCOVR_1O00_1000.xml
+     - ./export/PDS4_PDS_1O00.JSON
+
+>>  INFO Exit(0)
